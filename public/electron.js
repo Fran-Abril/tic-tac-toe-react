@@ -1,19 +1,22 @@
 // Module to control the application lifecycle and the native browser window.
-const { app, BrowserWindow, protocol } = require("electron");
+const { app, BrowserWindow, protocol, Menu } = require("electron");
 const { URL } = require("url");
 const path = require("path");
 
 // Create the native browser window.
 function createWindow() {
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 550,
+    maxWidth: 550,
+    height: 250,
+    maxHeight: 250,
     // Set the path of an additional "preload" script that can be used to
     // communicate between node-land and browser-land.
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
   });
+  Menu.setApplicationMenu(null);
 
   // In production, set the initial browser path to the local bundle generated
   // by the Create React App build process.
@@ -26,7 +29,7 @@ function createWindow() {
 
   // Automatically open Chrome's DevTools in development mode.
   if (!app.isPackaged) {
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
   }
 }
 
