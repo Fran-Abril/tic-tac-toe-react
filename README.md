@@ -1,24 +1,10 @@
-# React and Electron Base Application
-This is a base application for building desktop applications with React and Electron. It includes everything you need to start building a scalable and easy-to-maintain application.
+# Tutorial: Tic-Tac-Toe
+This [tutorial](https://react.dev/learn/tutorial-tic-tac-toe) does not assume any existing React knowledge. The techniques you’ll learn in the tutorial are fundamental to building any React app, and fully understanding it will give you a deep understanding of React. 
 
 ## Installation
-Before getting started, make sure you have Node.js installed on your computer. You can download it from the official [Node.js](https://nodejs.org/) website.
-
-Once you have Node.js installed, follow these steps to get started with this application:
-
-1.  Fork the repository or clone this repository to your computer:
+To install the application, run the following command:
 ```bash
-git clone https://github.com/Fran-Abril/react-electron-base.git
-```
-
-2. Enter the application directory:
-```bash
-cd react-electron-base
-```
-
-3. Install the dependencies:
-```bash
-yarn install
+yarn electron:start
 ```
 
 ## Usage
@@ -38,22 +24,14 @@ yarn electron:package:{mac | win | linux}
 
 This will create a compiled version of the application in the "dist" directory. The application is now ready to be distributed and used by any user.
 
-## Project Structure
-The application is structured as follows:
+## Pending Improvements
+If you have extra time or want to practice your new React skills, here are some ideas for improvements that you could make to the tic-tac-toe game, listed in order of increasing difficulty:
 
-- `src`: This directory contains all the source code for the application.
-- `public/electron.js`: This directory contains all the code related to the Electron main process.
-- `public`: This directory contains all the static files for the application, such as images and style sheets.
-- `package.json`: This file contains the dependencies and commands for the application.
-
-## Contributing
-If you'd like to contribute to this project, you can do the following:
-
-1. Fork the repository.
-2. Create a branch with your changes: `git checkout -b my-branch`
-3. Make your changes and commit: `git commit -am 'Adding new features'`
-4. Push your changes to your fork: `git push origin my-branch`
-5. Create a pull request on this repository.
+1. For the current move only, show “You are at move #…” instead of a button.
+2. Rewrite Board to use two loops to make the squares instead of hardcoding them.
+3. Add a toggle button that lets you sort the moves in either ascending or descending order.
+4. When someone wins, highlight the three squares that caused the win (and when no one wins, display a message about the result being a draw).
+5. Display the location for each move in the format (row, col) in the move history list.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
